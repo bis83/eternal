@@ -9,5 +9,6 @@ func hHelloWorld(w http.ResponseWriter, r *http.Request) {
 
 func main() {
   http.HandleFunc("/", hHelloWorld)
+  http.Handle("/game/", http.StripPrefix("/game/", http.FileServer(http.Dir("/game"))))
   http.ListenAndServe(":5000", nil)
 }
