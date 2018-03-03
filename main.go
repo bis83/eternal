@@ -10,7 +10,21 @@ import (
 type UberData struct {
   ID          int     `json:"id"`
   Name        string  `json:"name"`
+  Nickname    string  `json:"nickname"`
   Description string  `json:"description"`
+  ITypeID     int     `json:"itypeid"`
+  ETypeID     int     `json:"etypeid"`
+  WTypeID     int     `json:"wtypeid"`
+  ATypeID     int     `json:"atypeid"`
+  Params      []int   `json:"params"`
+  Price       int     `json:"price"`
+  Traits      []struct {
+    Code      int     `json:"code"`
+    DataID    int     `json:"dataid"`
+    Value     float32 `json:"value"`
+  } `json:"traits"`
+  Note        string  `json:"note"`
+  Profile     string  `json:"profile"`
 }
 
 func writeTemplate(w http.ResponseWriter, tpl string, dat interface{}) error {
@@ -61,7 +75,6 @@ func main() {
   http.HandleFunc("/armors", makeHandler("/game/data/Armors.json", "template/armors.tpl"))
   http.HandleFunc("/weapons", makeHandler("/game/data/Weapons.json", "template/weapons.tpl"))
   http.HandleFunc("/actors", makeHandler("/game/data/Actors.json", "template/actors.tpl"))
-  http.HandleFunc("/classes", makeHandler("/game/data/Classes.json", "template/classes.tpl"))
   http.HandleFunc("/enemies", makeHandler("/game/data/Enemies.json", "template/enemies.tpl"))
   http.HandleFunc("/troops", makeHandler("/game/data/Troops.json", "template/troops.tpl"))
   http.HandleFunc("/states", makeHandler("/game/data/States.json", "template/states.tpl"))
