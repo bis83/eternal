@@ -9,11 +9,11 @@
         <th>DESCRIPTION</th>
       </tr>
       {{range .}}
-        <tr>
-          <td>{{ .ID}} </td>
-          <td>{{ .Name}}</td>
-          <td>{{ .Description}}</td>
-        </tr>
+      <tr>
+        <td>{{ .ID}} </td>
+        <td>{{ .Name}}</td>
+        <td>{{ .Description}}</td>
+      </tr>
       {{end}}
     </table>
   </body>
