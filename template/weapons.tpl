@@ -9,7 +9,6 @@
         <tr>
           <th>ID</th>
           <th>NAME</th>
-          <th>DESCRIPTION</th>
           <th>PRICE</th>
           <th>MAX-HP</th>
           <th>MAX-MP</th>
@@ -19,6 +18,7 @@
           <th>MDF</th>
           <th>AGI</th>
           <th>LUK</th>
+          <th>DESCRIPTION</th>
           <th>ETYPE-ID</th>
           <th>WTYPE-ID</th>
         </tr>
@@ -28,11 +28,11 @@
         <tr>
           <td>{{ .ID}}</td>
           <td>{{ .Name}}</td>
-          <td>{{ .Description}}</td>
           <td>{{ .Price}}</td>
           {{range .Params}}
           <td>{{ . }}</td>
           {{end}}
+          <td>{{ .Description}}</td>
           <td>{{ .ETypeID}}</td>
           <td>{{ .WTypeID}}</td>
         </tr>

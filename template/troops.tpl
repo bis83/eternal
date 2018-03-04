@@ -9,7 +9,7 @@
         <tr>
           <th>ID</th>
           <th>NAME</th>
-          <th>DESCRIPTION</th>
+          <th>MEMBERS</th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +17,11 @@
         <tr>
           <td>{{ .ID}}</td>
           <td>{{ .Name}}</td>
-          <td>{{ .Description}}</td>
+          <td>
+          {{range .Members}}
+          {{ .EnemyID}},
+          {{end}}
+          </td>
         </tr>
         {{end}}
       </tbody>

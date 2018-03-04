@@ -9,7 +9,11 @@
         <tr>
           <th>ID</th>
           <th>NAME</th>
+          <th>MP-COST</th>
+          <th>TP-COST</th>
+          <th>TP-GAIN</th>
           <th>DESCRIPTION</th>
+          <th>NOTE</th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +21,11 @@
         <tr>
           <td>{{ .ID}}</td>
           <td>{{ .Name}}</td>
+          <td>{{ .MPCost}}</td>
+          <td>{{ .TPCost}}</td>
+          <td>{{ .TPGain}}</td>
           <td>{{ .Description}}</td>
+          <td>{{ .Note}}</td>
         </tr>
         {{end}}
       </tbody>

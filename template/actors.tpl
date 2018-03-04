@@ -9,7 +9,9 @@
         <tr>
           <th>ID</th>
           <th>NAME</th>
-          <th>DESCRIPTION</th>
+          <th>NICKNAME</th>
+          <th>PROFILE</th>
+          <th>NOTE</th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +19,9 @@
         <tr>
           <td>{{ .ID}}</td>
           <td>{{ .Name}}</td>
-          <td>{{ .Description}}</td>
+          <td>{{ .Nickname}}</td>
+          <td>{{ .Profile}}</td>
+          <td>{{ .Note}}</td>
         </tr>
         {{end}}
       </tbody>

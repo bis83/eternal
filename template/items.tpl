@@ -9,8 +9,8 @@
         <tr>
           <th>ID</th>
           <th>NAME</th>
-          <th>DESCRIPTION</th>
           <th>PRICE</th>
+          <th>DESCRIPTION</th>
           <th>ITYPE-ID</th>
         </tr>
       </thead>
@@ -19,8 +19,8 @@
         <tr>
           <td>{{ .ID}}</td>
           <td>{{ .Name}}</td>
-          <td>{{ .Description}}</td>
           <td>{{ .Price}}</td>
+          <td>{{ .Description}}</td>
           <td>{{ .ITypeID}}</td>
         </tr>
         {{end}}

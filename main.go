@@ -8,23 +8,52 @@ import (
 )
 
 type UberData struct {
-  ID          int     `json:"id"`
-  Name        string  `json:"name"`
-  Nickname    string  `json:"nickname"`
-  Description string  `json:"description"`
-  ITypeID     int     `json:"itypeid"`
-  ETypeID     int     `json:"etypeid"`
-  WTypeID     int     `json:"wtypeid"`
-  ATypeID     int     `json:"atypeid"`
-  Params      []int   `json:"params"`
-  Price       int     `json:"price"`
-  Traits      []struct {
-    Code      int     `json:"code"`
-    DataID    int     `json:"dataid"`
-    Value     float32 `json:"value"`
+  ID              int     `json:"id"`
+  Name            string  `json:"name"`
+  Nickname        string  `json:"nickname"`
+  Description     string  `json:"description"`
+  ITypeID         int     `json:"itypeId"`
+  ETypeID         int     `json:"etypeId"`
+  WTypeID         int     `json:"wtypeId"`
+  ATypeID         int     `json:"atypeId"`
+  STypeID         int     `json:"stypeId"`
+  Params          []int   `json:"params"`
+  Price           int     `json:"price"`
+  Traits          []struct {
+    Code          int     `json:"code"`
+    DataID        int     `json:"dataid"`
+    Value         float32 `json:"value"`
   } `json:"traits"`
-  Note        string  `json:"note"`
-  Profile     string  `json:"profile"`
+  Damage          struct {
+    Critical      bool    `json:"critical"`
+    ElementID     int     `json:"elementId"`
+    Formula       string  `json:"formula"`
+    Type          int     `json:"type"`
+    Variance      int     `json:"variance"`
+  } `json:"damage"`
+  Effects         []struct {
+    Code          int     `json:"code"`
+    DataID        int     `json:"dataId"`
+    Value1        float32 `json:"value1"`
+    Value2        float32 `json:"value2"`
+  } `json:"effects"`
+  MPCost          int     `json:"mpCost"`
+  TPCost          int     `json:"tpCost"`
+  TPGain          int     `json:"tpGain"`
+  Scope           int     `json:"scope"`
+  HitType         int     `json:"hitType"`
+  Occasion        int     `json:"occasion"`
+  Repeats         int     `json:"repeats"`
+  Speed           int     `json:"speed"`
+  SuccessRate     int     `json:"successRate"`
+  Members         []struct {
+    EnemyID       int     `json:"enemyId"`
+    X             int     `json:"x"`
+    Y             int     `json:"y"`
+    Hidden        bool    `json:"hidden"`
+  } `json:"members"`
+  Note            string  `json:"note"`
+  Profile         string  `json:"profile"`
 }
 
 func writeTemplate(w http.ResponseWriter, tpl string, dat interface{}) error {
