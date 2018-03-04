@@ -56,7 +56,7 @@ func makeHandler(pathJSON string, pathTemplate string) http.HandlerFunc {
     if err != nil {
       panic(err)
     }
-    if err := writeTemplate(w, pathTemplate, dat); err != nil {
+    if err := writeTemplate(w, pathTemplate, dat[1:]); err != nil {
       panic(err)
     }
   }
