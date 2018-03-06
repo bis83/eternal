@@ -97,8 +97,15 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
   }
 }
 
+func addNoCacheControl(h http.Handler) http.HandlerFunc {
+  return func(w http.ResponseWriter, r *http.Request) {
+    w.Header().Add("Cache-Control", "no-cache,no-store,must-revalidate")
+    h.ServeHTTP(w, r)
+  }
+}
+
 func main() {
-  http.Handle("/game/", http.StripPrefix("/game/", http.FileServer(http.Dir("/game"))))
+  http.Handle("/game/", addNoCacheControl(http.StripPrefix("/game/", http.FileServer(http.Dir("/game")))))
   http.HandleFunc("/skills", makeHandler("/game/data/Skills.json", "template/skills.tpl"))
   http.HandleFunc("/items", makeHandler("/game/data/Items.json", "template/items.tpl"))
   http.HandleFunc("/armors", makeHandler("/game/data/Armors.json", "template/armors.tpl"))
