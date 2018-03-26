@@ -54,6 +54,8 @@ type UberData struct {
   } `json:"members"`
   Note            string  `json:"note"`
   Profile         string  `json:"profile"`
+  Gold            int     `json:"gold"`
+  EXP             int     `json:"exp"`
 }
 
 func writeTemplate(w http.ResponseWriter, tpl string, dat interface{}) error {

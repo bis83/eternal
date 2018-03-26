@@ -9,7 +9,16 @@
         <tr>
           <th>ID</th>
           <th>NAME</th>
-          <th>DESCRIPTION</th>
+          <th>MAX-HP</th>
+          <th>MAX-MP</th>
+          <th>ATK</th>
+          <th>DEF</th>
+          <th>MAT</th>
+          <th>MDF</th>
+          <th>AGI</th>
+          <th>LUK</th>
+          <th>GOLD</th>
+          <th>EXP</th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +26,11 @@
         <tr>
           <td>{{ .ID}}</td>
           <td>{{ .Name}}</td>
-          <td>{{ .Description}}</td>
+          {{range .Params}}
+          <td>{{ . }}</td>
+          {{end}}
+          <td>{{ .Gold}}</td>
+          <td>{{ .EXP}}</th>
         </tr>
         {{end}}
       </tbody>
